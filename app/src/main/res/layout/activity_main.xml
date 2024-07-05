@@ -75,8 +75,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="64dp"
-        android:layout_marginBottom="371dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="365dp"
         android:text="Open Map" />
+
+    <Button
+        android:id="@+id/btn_stop_insertion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="186dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="365dp"
+        android:text="Stop Insertion" />
 
 </RelativeLayout>
