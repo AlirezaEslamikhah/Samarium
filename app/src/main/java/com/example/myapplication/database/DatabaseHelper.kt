@@ -8,6 +8,8 @@ import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 import com.example.myapplication.MainActivity
 
+
+
 object DatabaseHelper {
 
     @RequiresApi(Build.VERSION_CODES.P)
@@ -20,14 +22,15 @@ object DatabaseHelper {
 
         val situation = calculateSituation(signalStrength)
         val color = getSituationColor(situation)
-        if (latitude == 0.0 && longitude == 0.0) {
-            latitude = 35.7103361
-            longitude = 51.4114904
-        }
+//        if (latitude == 0.0 && longitude == 0.0) {
+//            latitude = 35.7103361
+//            longitude = 51.4114904
+//        }
+
         val networkInfo = NetworkInfo(
             eventTime = eventTime,
-            latitude = latitude,
-            longitude = longitude,
+            latitude = MainActivity.latitude_main,
+            longitude = MainActivity.longitude_main,
             cellTechnology = cellTechnology,
             plmnId = plmnId,
             rac = rac,

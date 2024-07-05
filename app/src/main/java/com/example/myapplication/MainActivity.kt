@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private var isInsertionStopped = false
 
+
+
     private val runnable = object : Runnable {
         @RequiresApi(Build.VERSION_CODES.P)
         override fun run() {
@@ -42,8 +44,13 @@ class MainActivity : AppCompatActivity() {
                 LocationHelper.getLastLocation(this@MainActivity, locationText, eventTimeText)
                 NetworkHelper.displayNetworkInfo(this@MainActivity, cellTechText, cellLocationText, signalQualityText)
             }
-            handler.postDelayed(this, 1000)
+            handler.postDelayed(this, 15000)
         }
+    }
+    companion object {
+        const val LOCATION_PERMISSION_REQUEST_CODE = 1
+        public var longitude_main: Double = 35.7104365
+        public var latitude_main: Double = 51.411407
     }
 
 
@@ -86,6 +93,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
     }
 
     private fun checkUserPermissions() {
@@ -106,15 +114,32 @@ class MainActivity : AppCompatActivity() {
         handler.removeCallbacks(runnable)
     }
 
-    @RequiresApi(Build.VERSION_CODES.P)
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//    @RequiresApi(Build.VERSION_CODES.P)
+//    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+//            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                LocationHelper.getLastLocation(this, locationText, eventTimeText)
+//            } else {
+//                // Permission denied, handle appropriately
+//            }
+//        }
+//    }
+@RequiresApi(Build.VERSION_CODES.P)
+override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            // Permission was granted, proceed with accessing location
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 LocationHelper.getLastLocation(this, locationText, eventTimeText)
-            } else {
-                // Permission denied, handle appropriately
             }
+        } else {
+            // Permission denied, show a message to the user
+            locationText.text = "Location permission denied"
+            eventTimeText.text = ""
         }
     }
+}
 }

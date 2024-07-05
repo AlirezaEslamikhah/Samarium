@@ -22,6 +22,8 @@ object LocationHelper {
 
     @RequiresApi(Build.VERSION_CODES.P)
     fun getLastLocation(activity: MainActivity, locationText: TextView, eventTimeText: TextView) {
+        fusedLocationClient = getFusedLocationProviderClient(activity)
+
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return
@@ -29,13 +31,11 @@ object LocationHelper {
 
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location: Location? ->
-                location?.let {
-                    val latitude = it.latitude
-                    val longitude = it.longitude
-                    locationText.text = "Location: Lat: ${latitude}, Long: ${longitude}"
-                    val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-                    val eventTime = dateFormat.format(Date(System.currentTimeMillis()))
-                    eventTimeText.text = "Event Time: $eventTime"
+                if (location != null) {
+                    updateLocationUI(location, locationText, eventTimeText)
+                } else {
+                    // Handle the case where the location is null
+                    requestLocationUpdates(activity, locationText, eventTimeText)
                 }
             }
             .addOnFailureListener { exception ->
@@ -54,12 +54,7 @@ object LocationHelper {
         val locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 locationResult.locations.forEach { location ->
-                    val latitude = location.latitude
-                    val longitude = location.longitude
-                    locationText.text = "Location: Lat: ${latitude}, Long: ${longitude}"
-                    val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-                    val eventTime = dateFormat.format(Date(System.currentTimeMillis()))
-                    eventTimeText.text = "Event Time: $eventTime"
+                    updateLocationUI(location, locationText, eventTimeText)
                 }
                 fusedLocationClient.removeLocationUpdates(this)
             }
@@ -72,12 +67,23 @@ object LocationHelper {
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
     }
 
+    private fun updateLocationUI(location: Location, locationText: TextView, eventTimeText: TextView) {
+        val latitude = location.latitude
+        val longitude = location.longitude
+        locationText.text = "Location: Lat: ${latitude}, Long: ${longitude}"
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val eventTime = dateFormat.format(Date(System.currentTimeMillis()))
+        eventTimeText.text = "Event Time: $eventTime"
+        MainActivity.longitude_main = longitude
+        MainActivity.latitude_main = latitude
+    }
+
     fun checkLocationPermission(activity: MainActivity) {
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity,
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
-                activity.LOCATION_PERMISSION_REQUEST_CODE)
+                MainActivity.LOCATION_PERMISSION_REQUEST_CODE)
         }
     }
 }

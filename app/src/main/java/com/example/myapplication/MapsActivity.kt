@@ -17,7 +17,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-    private lateinit var databaseHelper: NetworkInfoDatabaseHelper
+    private lateinit var databaseHelperr: NetworkInfoDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        databaseHelper = NetworkInfoDatabaseHelper(this)
+        databaseHelperr = NetworkInfoDatabaseHelper(this)
     }
 
     /**
@@ -46,7 +46,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Fetch data from the database
-        val networkInfoList = databaseHelper.getAllInfo()
+        val networkInfoList = databaseHelperr.getAllInfo()
 
         // Add markers for each NetworkInfo object
         for (info in networkInfoList) {
