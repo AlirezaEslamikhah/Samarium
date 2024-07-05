@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         handler.removeCallbacks(runnable)
     }
 
-//    @RequiresApi(Build.VERSION_CODES.P)
+    //    @RequiresApi(Build.VERSION_CODES.P)
 //    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
 //        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 //        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
@@ -125,21 +125,21 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
-@RequiresApi(Build.VERSION_CODES.P)
-override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-    super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-        if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-            // Permission was granted, proceed with accessing location
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                LocationHelper.getLastLocation(this, locationText, eventTimeText)
+    @RequiresApi(Build.VERSION_CODES.P)
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                // Permission was granted, proceed with accessing location
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
+                    ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    LocationHelper.getLastLocation(this, locationText, eventTimeText)
+                }
+            } else {
+                // Permission denied, show a message to the user
+                locationText.text = "Location permission denied"
+                eventTimeText.text = ""
             }
-        } else {
-            // Permission denied, show a message to the user
-            locationText.text = "Location permission denied"
-            eventTimeText.text = ""
         }
     }
-}
 }

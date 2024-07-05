@@ -55,7 +55,7 @@ To install the application on your Android device, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clonehttps://github.com/AlirezaEslamikhah/Samarium.git
+    git clone https://github.com/AlirezaEslamikhah/Samarium.git
     ```
 2. Navigate to the project directory:
 3. Open the project in Android Studio.
@@ -86,6 +86,11 @@ Here are some screenshots of the application in action, displaying the collected
 
 ![Screenshot 2](pictures/pic2.png)
 
+### Another Map picture 
+
+*Map showing 2 seperate points on the map*
+
+![Screenshot 3](pictures/pic3.png)
 
 
 
