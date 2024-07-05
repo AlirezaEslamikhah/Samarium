@@ -78,13 +78,13 @@ Here are some screenshots of the application in action, displaying the collected
 
 *Map showing which presents the the quality and the status of our location records*
 
-![Screenshot 1]("./pictures/pic1.png")
+![Screenshot 1]("pictures/pic1.png")
 
 ### Main Page Picture 
 
 *An overview of the main page of the app showing the features and updates during the time *
 
-![Screenshot 2]("./pictures/pic2.png")
+![Screenshot 2]("pictures/pic2.png")
 
 
 
