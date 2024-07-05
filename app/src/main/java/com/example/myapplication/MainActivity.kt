@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 LocationHelper.getLastLocation(this@MainActivity, locationText, eventTimeText)
                 NetworkHelper.displayNetworkInfo(this@MainActivity, cellTechText, cellLocationText, signalQualityText)
             }
-            handler.postDelayed(this, 15000)
+            handler.postDelayed(this, 1000)
         }
     }
     companion object {
