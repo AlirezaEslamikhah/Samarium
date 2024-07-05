@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "924617596826",
+    "project_id": "carbon-facet-428421-n2",
+    "storage_bucket": "carbon-facet-428421-n2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924617596826:android:28803d56295fe98cf06423",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIqtV5HXIAle4DHBo_zhiN98oEiIR9Xig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
