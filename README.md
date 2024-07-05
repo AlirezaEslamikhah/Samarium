@@ -45,18 +45,19 @@ The application collects and records the following parameters:
      - RSCP (Received Signal Code Power)
      - Ec/N0 (Energy per chip over Noise)
 
+## Important Note
+
+The most important point in this section is that the user might be in a place where there is no GPS coverage. For example, the user could be in a subway or a long tunnel and moving along the subway or tunnel route. In such scenarios, relying solely on GPS for location tracking is not feasible. Alternative methods must be employed to determine the user's location accurately under these conditions.
+
 ## Installation
 
 To install the application on your Android device, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/qoe-measurement-app.git
+    git clonehttps://github.com/AlirezaEslamikhah/Samarium.git
     ```
 2. Navigate to the project directory:
-    ```sh
-    cd qoe-measurement-app
-    ```
 3. Open the project in Android Studio.
 4. Build and run the application on your device.
 
@@ -73,23 +74,20 @@ To install the application on your Android device, follow these steps:
 
 Here are some screenshots of the application in action, displaying the collected parameters and their values.
 
-### Screenshot 1
+### Map picture 
 
-*Description of Screenshot 1.*
+*Map showing which presents the the quality and the status of our location records*
 
-![Screenshot 1](path/to/screenshot1.png)
+![Screenshot 1]("./pictures/pic1.png")
 
-### Screenshot 2
+### Main Page Picture 
 
-*Description of Screenshot 2.*
+*An overview of the main page of the app showing the features and updates during the time *
 
-![Screenshot 2](path/to/screenshot2.png)
+![Screenshot 2]("./pictures/pic2.png")
 
-### Screenshot 3
 
-*Description of Screenshot 3.*
 
-![Screenshot 3](path/to/screenshot3.png)
 
 ## Contributing
 
@@ -101,5 +99,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or feedback, please contact [your name] at [your email address].
-
+For any questions or feedback, please contact me at alirezasl2014@gmail.com or @alireza_1080 on Telegram 
