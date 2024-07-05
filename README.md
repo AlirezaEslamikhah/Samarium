@@ -12,7 +12,7 @@ To address this, we have developed an application that measures various paramete
 
 The application collects and records the following parameters:
 
-1. **Location of 10 Users:**
+1. **Location of Users:**
    - Latitude
    - Longitude
 
