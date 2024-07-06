@@ -16,12 +16,12 @@
 
     <TextView
         android:id="@+id/locationText"
-        android:layout_width="185dp"
-        android:layout_height="83dp"
+        android:layout_width="395dp"
+        android:layout_height="113dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="479dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="348dp"
         android:text="Location: "
         android:textSize="18sp" />
 
@@ -31,41 +31,41 @@
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="646dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="609dp"
         android:text="Event Time: "
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/cellTechText"
-        android:layout_width="198dp"
-        android:layout_height="79dp"
+        android:layout_width="211dp"
+        android:layout_height="87dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="215dp"
-        android:layout_marginBottom="641dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginBottom="600dp"
         android:text="Cell Technology: "
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/cellLocationText"
-        android:layout_width="215dp"
-        android:layout_height="76dp"
+        android:layout_width="394dp"
+        android:layout_height="106dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="579dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="472dp"
         android:text="Cell Location: "
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/signalQualityText"
-        android:layout_width="219dp"
-        android:layout_height="90dp"
+        android:layout_width="406dp"
+        android:layout_height="113dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="373dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="231dp"
         android:text="Signal Quality: "
         android:textSize="18sp" />
 
@@ -75,8 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="126dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="149dp"
         android:text="Open Map" />
 
     <Button
@@ -85,9 +85,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="124dp"
+        android:layout_marginLeft="230dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="148dp"
         android:text="Stop Insertion" />
 
 </RelativeLayout>

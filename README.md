@@ -48,7 +48,8 @@ The application collects and records the following parameters:
 ## Important Note
 
 The most important point in this section is that the user might be in a place where there is no GPS coverage. For example, the user could be in a subway or a long tunnel and moving along the subway or tunnel route. In such scenarios, relying solely on GPS for location tracking is not feasible. Alternative methods must be employed to determine the user's location accurately under these conditions.
-
+## مهم 
+لطفا در صورت پدیدار نشدن اطلاعات در صفحه اول 2 یا 3 بار اپ را بسته و سپس باز کنید و جی چی اس گوشی را در صورت امکان یکبار روشن خاموش کنید 
 ## Installation
 
 To install the application on your Android device, follow these steps:
